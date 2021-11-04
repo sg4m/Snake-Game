@@ -63,9 +63,9 @@ while True:
 	def game_over():
 
 		
-		my_font = pygame.font.SysFont('Arial', 50)
+		font = pygame.font.SysFont('Arial', 50)
 		
-		game_over_surface = my_font.render('Your Score is : ' + str(score), True, red)
+		game_over_surface = font.render('Your Score is : ' + str(score), True, red)
 		
 		game_over_rect = game_over_surface.get_rect()
 		
@@ -115,7 +115,7 @@ while True:
 		#Snake grow
 		snake_body.insert(0, list(snake_position))
 		if snake_position[0] == fruit_position[0] and snake_position[1] == fruit_position[1]:
-			score += 10
+			score += 20
 			fruit_spawn = False
 		else:
 			snake_body.pop()
@@ -150,3 +150,4 @@ while True:
 		
 		pygame.display.update()
 		fps.tick(snake_speed)
+		font = pygame.font.SysFont('Arial', 30)
